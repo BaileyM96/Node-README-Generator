@@ -4,8 +4,6 @@
 const fs = require('fs');
 //Allows us to capture user input in your Node
 const inquirer = require('inquirer');
-// Name util is not bright blue might have to download the package
-const util = require('util');
 const generateMarkDown = require('./utils/generateMarkdown.js');
 
 
@@ -53,7 +51,7 @@ const questions = [
         name: "install"
     },
     {
-        type: "Checkbox",
+        type: "list",
         message: "What license do you want to include?",
         name: "license",
         choices: ["None", "GNU General Public License v3.0", "MIT", "Apache", "Mozilla Public License"],
@@ -73,11 +71,16 @@ function writeToFile(fileName, data) {
 
 
 
+
+
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
     .then(function(userInput) {
         console.log(userInput);
+        const newMarkDown = generateMarkDown(userInput);
+        console.log(newMarkDown);
+        writeToFile('test.md', newMarkDown);
     })
 };
 
