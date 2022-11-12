@@ -47,18 +47,34 @@ const questions = [
         name: "table of contents"
     },
     {
-        message: "How should this project be installed?",
+        message: "Provide Installation instructions",
         name: "install"
     },
     {
         type: "list",
         message: "What license do you want to include?",
         name: "license",
-        choices: ["None", "GNU General Public License v3.0", "MIT", "Apache", "Mozilla Public License"],
+        choices: ["None", "GNU General Public License v3.0", "MIT License", "Apache License", "Mozilla Public License"],
     },
     {
-        message: "Do you want to provide screenshots?",
-        name: "screenshots"
+        message: "Do you want to include credits??",
+        name: "credits",
+        validate:  function (answer) {
+            if (answer.length < 1) {
+                return console.log("If no credits please use N/A");
+            }
+            return true;
+        }
+    },
+    {
+        message: "Include tests if used",
+        name: "test",
+        validate: function(answer) {
+            if (answer.length < 1) {
+                return console.log("If no tests were ran please use N/A");
+            }
+            return true;
+        }
     }
 ];
 
