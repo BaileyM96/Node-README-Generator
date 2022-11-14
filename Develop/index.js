@@ -2,7 +2,6 @@
 
 // This allows us to read/write files in a file system with Node
 const fs = require('fs');
-//Allows us to capture user input in your Node
 const inquirer = require('inquirer');
 const generateMarkDown = require('./utils/generateMarkdown.js');
 

@@ -1,23 +1,23 @@
 
-  #  Poop
-  ![Apache](https://img.shields.io/badge/License-Apache-blue.svg)
+  #  Cats
+  ![MIT](https://img.shields.io/badge/License-MIT-blue.svg)
  
 
   ## Description
-  fhglghsdlghldsgh
+  I love cats
 
   ## Table of Contents
   - [Installation](#installation)
   - [Credits](#credits)
   - [License](#license)
-  - [Tests](#test)
+
 
 
   ## Installation
-  N/A
+  n/a
 
   ## License
-      The licsense used for this project is Apache.
+      The licsense used for this project is MIT.
 
   ## Tests
   N/A
