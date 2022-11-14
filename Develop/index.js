@@ -12,9 +12,19 @@ const generateMarkDown = require('./utils/generateMarkdown.js');
 
 const questions = [
     {
+        message: "What is your email?",
+        name: "email",
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log("If no email use N/A.");
+            }
+            return true;
+        }
+    },
+    {
         type: "input",
         message: "What is your Github Username",
-        name: "Username",
+        name: "username",
         validate: function (answer) {
             if (answer.length < 1) {
                 return console.log("Please use a valid Github username.");
@@ -43,18 +53,20 @@ const questions = [
         }
     },
     {
-        message: "Include a table of contents?",
-        name: "table of contents"
-    },
-    {
         message: "Provide Installation instructions",
-        name: "install"
+        name: "install",
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log("Please provide installation instructions or use N/A");
+            }
+            return true;
+        }
     },
     {
         type: "list",
         message: "What license do you want to include?",
         name: "license",
-        choices: ["None", "GNU General Public License v3.0", "MIT License", "Apache License", "Mozilla Public License"],
+        choices: ["None", "GNUv3.0", "MIT", "Apache", "MozillaPublicLicense"],
     },
     {
         message: "Do you want to include credits??",
