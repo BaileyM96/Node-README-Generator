@@ -1,6 +1,4 @@
 // TODO: Include packages needed for this application
-
-// This allows us to read/write files in a file system with Node
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkDown = require('./utils/generateMarkdown.js');
@@ -107,7 +105,7 @@ function init() {
         console.log(userInput);
         const newMarkDown = generateMarkDown(userInput);
         console.log(newMarkDown);
-        writeToFile('test.md', newMarkDown);
+        writeToFile('README.md', newMarkDown);
     })
 };
 
